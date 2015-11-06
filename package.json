@@ -1,0 +1,27 @@
+{
+  "name": "w20-i18n-addon",
+  "version": "2.1.0",
+  "description": "SeedStack i18n add-on",
+  "license": "MPL 2.0",
+  "contributors": [
+    {
+      "name": "Adrien LAUER",
+      "email": "adrien.lauer@mpsa.com"
+    },
+    {
+      "name": "Kavi RAMYEAD",
+      "email": "kavi.ramyead@ext.mpsa.com"
+    },
+    {
+      "name": "Pierre THIROUIN",
+      "email": "pierre.thirouin@ext.mpsa.com"
+    }
+  ],
+  "devDependencies": {
+    "grunt": "~0.4",
+    "grunt-contrib-clean": "~0.6",
+    "grunt-contrib-jshint": "~0.10",
+    "grunt-contrib-connect": "~0.10.1",
+    "grunt-bower-task": "~0.4"
+  }
+}
