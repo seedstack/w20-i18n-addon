@@ -4,19 +4,19 @@
         <div>
             <div class="menu-wrapper">
                 <button data-ng-click="goTo('w20-i18n-addon/i18n')" class="btn btn-link menu-item enabled-link">
-                    {{ "application.view.w20-i18n-addon.dashboard" | localize }}
+                    {{ "application.view.seed-i18n.dashboard" | localize }}
                 </button>
                 <button data-ng-click="goTo('w20-i18n-addon/keys')" class="btn btn-link menu-item enabled-link">
-                    {{ "application.view.w20-i18n-addon.keys" | localize }}
+                    {{ "application.view.seed-i18n.keys" | localize }}
                 </button>
                 <div class="menu-item big">
-                    {{ "application.view.w20-i18n-addon.translate" | localize }}
+                    {{ "application.view.seed-i18n.translate" | localize }}
                 </div>
                 <div class="menu-item big" data-ng-hide="noTarget">
                     {{defaultLocale.englishLanguage}} to {{target.englishLanguage}} translation
                 </div>
                 <button data-ng-click="goTo('w20-i18n-addon/statistic')" class="btn btn-link menu-item enabled-link">
-                    {{ "application.view.w20-i18n-addon.statistic" | localize }}
+                    {{ "application.view.seed-i18n.statistic" | localize }}
                 </button>
 
                 <div class="pull-right translate-keys">
@@ -44,7 +44,7 @@
 
     <div class="alert alert-warning"
          data-ng-show="!authorization.hasPermission('seed-w20', ['seed', 'i18n', 'translation', 'write']) && authentication.isAuthentifiable()">
-        {{ "application.view.w20-i18n-addon.noeditpermission" | localize }}
+        {{ "application.view.seed-i18n.noeditpermission" | localize }}
     </div>
 
     <div class="container" data-ng-cloak data-ng-show="noTarget">
@@ -52,8 +52,8 @@
         <div class="row">
             <div  class="col-md-12 alert-flat alert-flat--dismissable alert-flat-warning">
                 <button class="close" data-dismiss="alert" type="button"> × </button>
-                <h4> {{ "application.view.w20-i18n-addon.nolanguages" | localize }} </h4>
-                {{ "application.view.w20-i18n-addon.messagenolanguage" | localize }}
+                <h4> {{ "application.view.seed-i18n.nolanguages" | localize }} </h4>
+                {{ "application.view.seed-i18n.messagenolanguage" | localize }}
             </div>
         </div>
     </div>
@@ -62,20 +62,20 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="form-inline keys-form-inline">
-                    <input id="search-keys" type="search" data-ng-model="keyFilterSearch.name" placeholder="{{ 'application.view.w20-i18n-addon.searchkeys' | localize }}" results="0" class="search-query">
+                    <input id="search-keys" type="search" data-ng-model="keyFilterSearch.name" placeholder="{{ 'application.view.seed-i18n.searchkeys' | localize }}" results="0" class="search-query">
                     <div class="checkbox">
                         <label for="checkbox-no-translation" class="checkbox">
-                            <input id="checkbox-no-translation" type="checkbox" data-ng-model="missing"> {{  "application.view.w20-i18n-addon.missing" | localize }}
+                            <input id="checkbox-no-translation" type="checkbox" data-ng-model="missing"> {{  "application.view.seed-i18n.missing" | localize }}
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="checkbox-outdated" class="checkbox">
-                            <input id="checkbox-outdated" type="checkbox" data-ng-model="outdated"> {{ "application.view.w20-i18n-addon.outdated" | localize }}
+                            <input id="checkbox-outdated" type="checkbox" data-ng-model="outdated"> {{ "application.view.seed-i18n.outdated" | localize }}
                         </label>
                     </div>
                     <div class="checkbox">
                         <label for="checkbox-no-" class="checkbox">
-                            <input id="checkbox-no-" type="checkbox" data-ng-model="approx"> {{ "application.view.w20-i18n-addon.approximate" |localize }}
+                            <input id="checkbox-no-" type="checkbox" data-ng-model="approx"> {{ "application.view.seed-i18n.approximate" |localize }}
                         </label>
                     </div>
                 </div>
@@ -94,7 +94,7 @@
             </div>
         </div>
 
-        <div class="label label-app-languages" data-ng-show="!keys.length"> {{ "application.view.w20-i18n-addon.nokeysretrieved" | localize }} </div>
+        <div class="label label-app-languages" data-ng-show="!keys.length"> {{ "application.view.seed-i18n.nokeysretrieved" | localize }} </div>
 
         <div class="row">
             <div class="col-md-6">
@@ -116,14 +116,14 @@
                 <form name="formtranslate" class="form-translate form-vertical">
 
                     <div class="panel panel-default">
-                        <div class="panel-heading"> {{ "application.view.w20-i18n-addon.comments" | localize }} </div>
+                        <div class="panel-heading"> {{ "application.view.seed-i18n.comments" | localize }} </div>
                         <div class="panel-body">
                             <p> {{currentKey[0].comment}} </p>
                         </div>
                     </div>
 
                     <div class="panel panel-default">
-                        <div class="panel-heading"> {{ "application.view.w20-i18n-addon.sourcein" | localize }} {{defaultLocale.englishLanguage}} </div>
+                        <div class="panel-heading"> {{ "application.view.seed-i18n.sourcein" | localize }} {{defaultLocale.englishLanguage}} </div>
                         <div class="panel-body">
                             <p> {{currentKey[0].source.translation}} </p>
                         </div>
@@ -134,7 +134,7 @@
                             Translation in {{target.englishLanguage}}
                                 <label class="control-label pull-right normalLabel">
                                     <input type="checkbox" class="pull-right" data-ng-model="targetApprox" data-ng-checked="currentKey[0].target.approx" data-ng-click="currentKey[0].target.approx = !currentKey[0].target.approx">
-                                    {{ "application.view.w20-i18n-addon.isapproximate" | localize }} &nbsp;
+                                    {{ "application.view.seed-i18n.isapproximate" | localize }} &nbsp;
                                 </label>
                         </div>
                         <div class="panel-body">
@@ -143,33 +143,33 @@
                     </div>
                     <div class="form-group form-i18n form-button-end-translation">
                         <div class="controls">
-                            <button type="button" class="btn-flat btn-default" value="Clear" data-ng-click="reset()"> {{ "application.view.w20-i18n-addon.clear" | localize }}</button>
+                            <button type="button" class="btn-flat btn-default" value="Clear" data-ng-click="reset()"> {{ "application.view.seed-i18n.clear" | localize }}</button>
                             <div class="pull-right">
                                 <button type="button"
                                         data-ng-click="save(currentKey[0], true)"
                                         class="btn-flat btn-primary"
                                         value="Save"
                                         data-ng-disabled="formtranslate.$invalid || formtranslate.$pristine || !authorization.hasPermission('seed-w20', ['seed', 'i18n', 'translation', 'write']) && authentication.isAuthentifiable()">
-                                    {{ "application.view.w20-i18n-addon.saveandnext" | localize }}
+                                    {{ "application.view.seed-i18n.saveandnext" | localize }}
                                 </button>
                                 <button type="button"
                                         data-ng-click="save(currentKey[0], false)"
                                         class="btn-flat btn-primary"
                                         value="Save"
                                         data-ng-disabled="formtranslate.$invalid || formtranslate.$pristine || !authorization.hasPermission('seed-w20', ['seed', 'i18n', 'translation', 'write']) && authentication.isAuthentifiable()">
-                                    {{ "application.view.w20-i18n-addon.save" | localize }}
+                                    {{ "application.view.seed-i18n.save" | localize }}
                                 </button>
                                 <button type="button"
                                         class="btn-flat btn-default"
                                         value="Previous"
                                         data-ng-click="navigate('backward')">
-                                    {{ "application.view.w20-i18n-addon.previous" | localize }}
+                                    {{ "application.view.seed-i18n.previous" | localize }}
                                 </button>
                                 <button type="button"
                                         class="btn-flat btn-default"
                                         value="Next"
                                         data-ng-click="navigate('forward')">
-                                    {{ "application.view.w20-i18n-addon.next" | localize }}
+                                    {{ "application.view.seed-i18n.next" | localize }}
                                 </button>
 
                             </div>
