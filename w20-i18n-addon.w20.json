@@ -1,0 +1,55 @@
+{
+  "id": "w20-i18n-addon",
+  "name": "SeedStack internationalization function",
+  "version": "1.0.0",
+  "author": "Yves DAUTREMAY, Adrien LAUER, Kavi RAMYEAD and Pierre THIROUIN",
+  "modules": {
+    "style": {
+      "path": "[css]!{w20-i18n-addon}/style/i18n.css",
+      "autoload": true
+    },
+    "i18nTranslator": {
+      "path": "{w20-i18n-addon}/modules/i18nTranslator",
+      "autoload": true,
+      "config": {
+        "seedi18nRestPrefix": "${seed-rest-path:/rest}/seed-i18n"
+      }
+    }
+  },
+  "i18n": {
+    "": ["${seed-rest-path:/rest}/seed-i18n/messages/:culture"]
+  },
+  "routes": {
+    "keys": {
+      "templateUrl": "{w20-i18n-addon}/views/keys.html",
+      "controller": "SeedI18nKeysController",
+      "security": "hasPermission('seed-w20', ['seed','i18n','key','read'])",
+      "hidden": true
+    },
+    "translate": {
+      "templateUrl": "{w20-i18n-addon}/views/translate.html",
+      "controller": "SeedI18nTranslateController",
+      "security": "hasPermission('seed-w20', ['seed','i18n','translation','read'])",
+      "hidden": true
+    },
+    "i18n": {
+      "templateUrl": "{w20-i18n-addon}/views/dashboard.html",
+      "controller": "SeedI18nDashboardController",
+      "security": "hasPermission('seed-w20', ['seed','i18n','locale','read'])"
+    },
+    "statistic": {
+      "templateUrl": "{w20-i18n-addon}/views/statistic.html",
+      "controller": "SeedI18nStatisticController",
+      "security": "hasPermission('seed-w20', ['seed','i18n','translation','read'])",
+      "hidden": true
+    }
+  },
+  "requireConfig": {
+    "shim": {
+      "{dropzone}/dist/dropzone-amd-module": ["jquery"]
+    },
+    "paths": {
+      "{dropzone}": "${components-path:bower_components}/dropzone/dist"
+    }
+  }
+}
