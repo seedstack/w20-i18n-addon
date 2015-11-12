@@ -3,20 +3,13 @@
   "version": "2.1.0-M1",
   "ignore": [
     ".*",
-    "*.iml",
     "*.md",
-    "specs",
-    "bom",
-    "core",
-    "demo",
-    "doc",
-    "rest",
-    "web",
+    "*.iml",
     "bower_components",
     "coverage",
+    "mock",
     "node_modules",
     "gruntfile.js",
-    "target",
     "package.json"
   ],
   "dependencies": {

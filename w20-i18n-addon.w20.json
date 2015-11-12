@@ -12,12 +12,12 @@
       "path": "{w20-i18n-addon}/modules/i18nTranslator",
       "autoload": true,
       "config": {
-        "seedi18nRestPrefix": "${seed-rest-path:/rest}/seed-i18n"
+        "seedi18nRestPrefix": "${seed-rest-path-slash:}seed-i18n"
       }
     }
   },
   "i18n": {
-    "": ["${seed-rest-path:/rest}/seed-i18n/messages/:culture"]
+    "": ["${seed-rest-path-slash:}seed-i18n/messages/:culture"]
   },
   "routes": {
     "keys": {
