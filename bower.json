@@ -1,6 +1,6 @@
 {
   "name": "w20-i18n-addon",
-  "version": "2.1.0-M1",
+  "version": "2.1.0",
   "ignore": [
     ".*",
     "*.md",
