@@ -17,7 +17,9 @@
     }
   },
   "i18n": {
-    "": ["${seed-rest-path-slash:}seed-i18n/messages/:culture"]
+    "": ["${seed-rest-path-slash:}seed-i18n/messages/:culture"],
+    "en": ["{w20-i18n-addon}/i18n/messages-en.json"],
+    "fr": ["{w20-i18n-addon}/i18n/messages-fr.json"]
   },
   "routes": {
     "keys": {
