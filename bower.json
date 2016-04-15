@@ -17,8 +17,5 @@
     "w20-bootstrap-3": "#master",
     "w20": "#master",
     "dropzone": "^4.2.0"
-  },
-  "devDependencies": {
-    "angular-mocks": "^1.5.2"
   }
 }

@@ -5,6 +5,7 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/.
  */
+
 define([
     'module',
     'require',
@@ -789,30 +790,29 @@ define([
                      * @param key
                      */
                     $scope.setCurrentKey = function (key) {
-                        var backendValue;
-                        seedI18nService.translations.get({locale: $scope.target.code, name: key.name}, function (data) {
-                            backendValue = data;
-                            key.comment = backendValue.comment;
-                            key.source.translation = backendValue && backendValue.source && backendValue.source.translation || '';
-                            key.target.translation = backendValue && backendValue.target && backendValue.target.translation || '';
-                            $scope.currentKey[0] = key;
-                            $scope.saveSuccess = false;
-                            $scope.$watch('currentKey[0]', function (newVal, oldVal) {
-                                if (newVal.name === oldVal.name) {
-                                    if (newVal.target.translation !== oldVal.target.translation) {
-                                        $scope.currentKey[0].target.outdated = false;
+                        seedI18nService.translations.get({locale: $scope.target.code, name: key.name}, function (response) {
+                            if (response) {
+                                key.source = { translation: response.source && response.source.translation || '' };
+                                key.target = { translation: response.target && response.target.translation || '' };
+                                key.comment = response.comment || '';
+                                $scope.currentKey[0] = key;
+                                $scope.saveSuccess = false;
+                                $scope.$watch('currentKey[0]', function (newVal, oldVal) {
+                                    if (newVal.name === oldVal.name) {
+                                        if (newVal.target.translation !== oldVal.target.translation) {
+                                            $scope.currentKey[0].target.outdated = false;
+                                        }
+
+                                        if (($scope.currentKey[0].target.translation === key.target.translation) &&
+                                            response.target && response.target.outdated && !$scope.currentKey[0].missing) {
+                                            $scope.currentKey[0].target.outdated = true;
+                                        }
+
+                                        $scope.currentKey[0].missing = !newVal.target.translation;
                                     }
 
-                                    if (($scope.currentKey[0].target.translation === backendValue.target.translation) &&
-                                        backendValue.target.outdated && !$scope.currentKey[0].missing) {
-                                        $scope.currentKey[0].target.outdated = true;
-                                    }
-
-                                    $scope.currentKey[0].missing = !newVal.target.translation;
-                                }
-
-                            }, true);
-
+                                }, true);
+                            }
                         });
                     };
 
