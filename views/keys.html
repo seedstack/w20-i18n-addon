@@ -24,7 +24,7 @@
 
             <div class="pull-right add-keys">
                 <a  class="btn btn-link"
-                    data-ng-href="{{exportPath}}"><i class="fa fa-download"></i> {{ "application.view.seed-i18n.exportkeys" | localize }}
+                    data-ng-href="{{exportPath}}" target="_self"><i class="fa fa-download"></i> {{ "application.view.seed-i18n.exportkeys" | localize }}
                 </a>
                 <div class="btn btn-link"
                      data-ng-disabled="!authorization.hasPermission('seed-w20', ['seed', 'i18n', 'key', 'write']) && authentication.isAuthentifiable()"
