@@ -1,3 +1,7 @@
+# Version 2.1.4 (2016-07-29)
+
+* [fix] Translations export link didn't trigger download properly
+
 # Version 2.1.3 (2016-04-28)
 
 * [fix] Handle potential null value in server response for key translation (#6).
